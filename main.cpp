@@ -77,7 +77,18 @@ int main()
         cerr<<exp<<endl;
         return 0;
     }
-    Graph<string, int>::iterator_DFS itr(&A);
     cout << A;
+    Graph<string, int>::iterator_DFS itr(&A);
+    itr = itr.begin();
+    for (;itr != itr.end(); ++itr){
+        cout<<(*itr);
+        //const char comand[] =  (*cmd.find((*itr).value)).second;
+        char comand[50];
+        for (int i = 0 ; i <= (*cmd.find((*itr).value)).second.size();++i)
+             comand[i] =(*cmd.find((*itr).value)).second[i];
+        system(comand);
+    }
+
+
     return 0;
 }

@@ -452,6 +452,10 @@ template < typename T, typename U>
                              return (*this);
                          }
 
+                         iterator_DFS& operator--(){
+                             --current;
+                             return (*this);
+                         }
                          Vetex<T> & operator*() const
                          {
                             return (**current);
@@ -471,6 +475,12 @@ template < typename T, typename U>
 
 
                          iterator_DFS (const iterator_DFS &itr): gr(itr.gr),  tree_DFS(itr.tree_DFS), current(itr.current){}
+                         iterator_DFS & operator =(const iterator_DFS &itr){
+                             gr = itr.gr;
+                             tree_DFS = itr.tree_DFS;
+                             current = itr.current;
+                             return(*this);
+                         }
 
                          bool operator == (const iterator_DFS &itr) const
                          { return ((*current) == (*itr.current)); }
